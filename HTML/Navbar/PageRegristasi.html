@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar | LaporDesa</title>
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ikon Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="/CSS/regristasi.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Bagian kiri -->
+    <div class="panel">
+      <h1 class="brand">LaporDesa</h1>
+      <p>Membangun Desa Menjadi Lebih baik.</p>
+      <a href="../login/login.html" class="btn-outline">Login</a>
+    </div>
+
+    <!-- Bagian kanan (form) -->
+    <div class="form-side">
+      <form id="formDaftar" novalidate>
+        <h2>Daftar</h2>
+        <p class="subtitle">Bergabunglah bersama kami untuk membuat desa menjadi lebih maju!</p>
+
+        <!-- Nama pengguna -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-user"></i></span>
+            <input type="text" id="username" placeholder="Nama pengguna">
+          </div>
+          <small class="error" id="usernameError"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" id="email" placeholder="Email">
+          </div>
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <!-- Nomor KK -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-id-card"></i></span>
+            <input type="text" id="kk" placeholder="Nomor kartu keluarga" maxlength="16">
+          </div>
+          <small class="error" id="kkError"></small>
+        </div>
+
+        <!-- Nomor telepon -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+            <input type="text" id="telepon" placeholder="No. telepon">
+          </div>
+          <small class="error" id="teleponError"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="password" placeholder="Password">
+          </div>
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <!-- Konfirmasi password -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="konfirmasi" placeholder="Konfirmasi password">
+          </div>
+          <small class="error" id="konfirmasiError"></small>
+        </div>
+
+        <button type="submit" class="btn-primary">Daftar</button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="register.js"></script>
+</body>
+</html>
