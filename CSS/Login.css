@@ -1,0 +1,398 @@
+/* =====================================================
+   HALAMAN LOGIN - LaporDesa
+
+   Isi file ini:
+   1. Variabel (warna & font)
+   2. Reset dasar
+   3. Layout halaman
+   4. Panel kiri (oranye)
+   5. Form kanan
+   6. Kolom input
+   7. Ingat saya & lupa password
+   8. Tombol (login, google) & pemisah
+   9. Tampilan HP / tablet
+   ===================================================== */
+
+
+/* ---------- 1. VARIABEL ---------- */
+:root {
+  /* Warna */
+  --warna-utama: #F24E1E;
+  --warna-terang: #FF7A30;
+  --warna-pucat: #FFC9A8;
+  --warna-teks: #1A1A1A;
+  --warna-garis: #2B2B2B;
+  --warna-error: #D92D20;
+  --warna-putih: #FFFFFF;
+
+  /* Font */
+  --font-judul: 'Anton', sans-serif;
+  --font-isi: 'Poppins', sans-serif;
+}
+
+
+/* ---------- 2. RESET DASAR ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-isi);
+  color: var(--warna-teks);
+  background-color: var(--warna-putih);
+}
+
+
+/* ---------- 3. LAYOUT HALAMAN ---------- */
+.page {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  min-height: 100vh;
+}
+
+
+/* ---------- 4. PANEL KIRI ---------- */
+.panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 40px;
+  text-align: center;
+  color: var(--warna-putih);
+
+  background: linear-gradient(
+    180deg,
+    var(--warna-utama) 0%,
+    var(--warna-terang) 60%,
+    var(--warna-pucat) 100%
+  );
+
+  border-radius: 0 40px 40px 0;
+}
+
+.brand {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.panel p {
+  font-size: 0.85rem;
+}
+
+
+/* Tombol "Daftar" */
+.btn-outline {
+  position: absolute;
+  bottom: 18%;
+  padding: 10px 52px;
+
+  border: 2px solid var(--warna-putih);
+  border-radius: 999px;
+
+  color: var(--warna-putih);
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background-color: var(--warna-putih);
+  color: var(--warna-utama);
+  outline: none;
+}
+
+
+/* ---------- 5. FORM KANAN ---------- */
+.form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+form {
+  width: 100%;
+  max-width: 380px;
+}
+
+h2 {
+  font-family: var(--font-judul);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  margin-bottom: 22px;
+  font-size: 0.8rem;
+}
+
+
+/* ---------- 6. KOLOM INPUT ---------- */
+
+.field {
+  margin-bottom: 12px;
+}
+
+
+/* Kotak input */
+.input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px 10px;
+
+  border: 1px solid var(--warna-garis);
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+
+/* Saat kolom diklik */
+.input:focus-within {
+  border-color: var(--warna-utama);
+  box-shadow: 0 0 0 3px rgba(242, 78, 30, 0.15);
+}
+
+
+/* Input teks */
+.input input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 4px 0;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+
+/* =====================================================
+   ICON EMAIL & PASSWORD
+   Tidak ada kotak/background orange
+   ===================================================== */
+
+.icon {
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+}
+
+.icon i {
+  font-size: 17px;
+  color: var(--warna-utama);
+}
+
+
+/* Ikon mata password */
+.toggle-eye {
+  display: grid;
+  place-items: center;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.toggle-eye i {
+  font-size: 15px;
+  color: var(--warna-utama);
+}
+
+
+/* Pesan error */
+.error {
+  display: block;
+
+  margin-top: 3px;
+  margin-left: 4px;
+
+  font-size: 0.72rem;
+  color: var(--warna-error);
+}
+
+.input.salah {
+  border-color: var(--warna-error);
+}
+
+
+/* ---------- 7. INGAT SAYA & LUPA PASSWORD ---------- */
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 4px;
+  margin-bottom: 14px;
+
+  font-size: 0.75rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.remember input {
+  width: 16px;
+  height: 16px;
+
+  accent-color: var(--warna-utama);
+}
+
+.options a {
+  color: var(--warna-teks);
+  text-decoration: none;
+}
+
+.options a:hover {
+  color: var(--warna-utama);
+}
+
+
+/* ---------- 8. TOMBOL & PEMISAH ---------- */
+
+
+/* Tombol Login */
+.btn-primary {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    90deg,
+    var(--warna-utama),
+    var(--warna-terang)
+  );
+
+  color: var(--warna-putih);
+
+  font-family: var(--font-isi);
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+
+/* Garis pemisah "atau" */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  font-size: 0.75rem;
+  color: #666666;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background-color: #BBBBBB;
+}
+
+
+/* =====================================================
+   TOMBOL LOGIN GOOGLE
+   ===================================================== */
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  padding: 10px;
+
+  border: 1px solid var(--warna-garis);
+  border-radius: 8px;
+
+  background-color: var(--warna-putih);
+
+  font-family: var(--font-isi);
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.btn-google:hover {
+  border-color: var(--warna-utama);
+  background-color: #FAFAFA;
+}
+
+
+/* Logo Google 4 warna */
+.google-icon {
+  width: 20px;
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+
+/* ---------- 9. TAMPILAN HP / TABLET ---------- */
+
+@media (max-width: 800px) {
+
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 32px 20px;
+
+    border-radius: 0 0 32px 32px;
+  }
+
+  .btn-outline {
+    position: static;
+    margin-top: 14px;
+  }
+}
