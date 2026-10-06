@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | LaporDesa</title>
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ikon Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="/CSS/Login.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Bagian kiri -->
+    <div class="panel">
+      <h1 class="brand">LaporDesa</h1>
+      <p>Membangun Desa Menjadi Lebih baik.</p>
+      <a href="/HTML/Navbar/PageRegristasi.html" class="btn-outline">Daftar</a>
+    </div>
+
+    <!-- Bagian kanan (form) -->
+    <div class="form-side">
+      <form id="formLogin" novalidate>
+        <h2>LOGIN</h2>
+        <p class="subtitle">Selamat datang kembali, silakan masuk untuk melanjutkan!</p>
+
+        <!-- Email -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" id="email" placeholder="Email">
+          </div>
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <div class="input">
+            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" class="toggle-eye" id="tombolMata">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <!-- Ingat saya & lupa password -->
+        <div class="options">
+          <label class="remember">
+            <input type="checkbox" id="ingat"> Ingat saya
+          </label>
+          <a href="#">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Login</button>
+
+        <div class="divider"><span>atau</span></div>
+
+        <button type="button" class="btn-google" id="tombolGoogle">
+          <i class="fa-brands fa-google"></i> Login dengan Google
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
